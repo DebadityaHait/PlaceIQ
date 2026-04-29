@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bell, BriefcaseBusiness, Gauge, GraduationCap, ListChecks, PlusCircle, Sparkles, UserRoundCheck, UsersRound, type LucideIcon } from "lucide-react";
+import { Bell, BriefcaseBusiness, Gauge, GraduationCap, ListChecks, PlusCircle, Sparkles, UserRoundCheck, UsersRound, Wand2, type LucideIcon } from "lucide-react";
 import { getCurrentUser } from "@/lib/session";
 import { SignOutButton } from "./sign-out";
 
@@ -11,6 +11,7 @@ const links: Record<"student" | "recruiter" | "officer", NavItem[]> = {
     ["Profile", "/student/profile", GraduationCap],
     ["Jobs", "/student/jobs", BriefcaseBusiness],
     ["Matches", "/student/matches", Sparkles],
+    ["Tools", "/student/tools", Wand2],
     ["Applications", "/student/applications", ListChecks],
     ["Notifications", "/student/notifications", Bell]
   ],
