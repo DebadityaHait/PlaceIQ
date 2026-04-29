@@ -1,10 +1,11 @@
 import { ActionForm } from "@/components/action-form";
 import { createJobAction } from "@/lib/actions";
+import { PlusCircle } from "lucide-react";
 
 export default function NewJobPage() {
   return (
     <main className="container grid gap-6 py-8">
-      <h1 className="text-3xl font-bold">Post job</h1>
+      <h1 className="flex items-center gap-3 text-3xl font-black"><PlusCircle className="text-[#70f0c6]" />Post job</h1>
       <ActionForm action={createJobAction} className="card grid gap-4 p-6" submitLabel="Publish job">
         <label className="grid gap-2 text-sm font-semibold">Title<input className="field" name="title" required /></label>
         <label className="grid gap-2 text-sm font-semibold">Description<textarea className="field" name="description" required rows={5} /></label>

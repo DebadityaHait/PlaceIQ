@@ -1,4 +1,5 @@
 import { desc, eq } from "drizzle-orm";
+import { BriefcaseBusiness, CalendarClock, MapPin } from "lucide-react";
 import { ActionForm } from "@/components/action-form";
 import { db } from "@/db";
 import { jobs, profiles } from "@/db/schema";
@@ -18,13 +19,13 @@ export default async function StudentJobsPage() {
 
   return (
     <main className="container grid gap-6 py-8">
-      <h1 className="text-3xl font-bold">Published jobs</h1>
-      {!canApply ? <div className="card p-4 text-sm text-[#7a431d]">Your profile must be verified by a placement officer before you can apply.</div> : null}
+      <div className="flex items-center gap-3"><BriefcaseBusiness className="text-[#70f0c6]" /><h1 className="text-3xl font-black">Published jobs</h1></div>
+      {!canApply ? <div className="card p-4 text-sm font-semibold text-[#ffd166]">Your profile must be verified by a placement officer before you can apply.</div> : null}
       <div className="grid gap-4">
         {rows.map((job) => (
           <article className="card grid gap-3 p-5" key={job.id}>
             <div className="flex flex-wrap items-start justify-between gap-3">
-              <div><h2 className="text-xl font-bold">{job.title}</h2><p className="text-sm text-[#66736c]">{recruiterMap.get(job.recruiterId)} · {job.location || "Remote"} · Deadline {formatDate(job.deadline)}</p></div>
+              <div><h2 className="text-xl font-black">{job.title}</h2><p className="mt-1 flex flex-wrap items-center gap-3 text-sm text-white/58"><span>{recruiterMap.get(job.recruiterId)}</span><span className="inline-flex items-center gap-1"><MapPin size={14} />{job.location || "Remote"}</span><span className="inline-flex items-center gap-1"><CalendarClock size={14} />{formatDate(job.deadline)}</span></p></div>
               <span className="badge">{job.jobType || "Role"}</span>
             </div>
             <p className="text-sm">{job.description}</p>

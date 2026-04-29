@@ -1,4 +1,5 @@
 import { and, eq } from "drizzle-orm";
+import { UsersRound } from "lucide-react";
 import { ActionForm } from "@/components/action-form";
 import { db } from "@/db";
 import { applications, jobs, profiles } from "@/db/schema";
@@ -17,14 +18,14 @@ export default async function JobApplicationsPage({ params }: { params: Promise<
   const studentMap = new Map(students.map((s) => [s.id, s]));
   return (
     <main className="container grid gap-6 py-8">
-      <h1 className="text-3xl font-bold">Applicants for {job?.title || "job"}</h1>
+      <h1 className="flex items-center gap-3 text-3xl font-black"><UsersRound className="text-[#70f0c6]" />Applicants for {job?.title || "job"}</h1>
       <div className="grid gap-4">
         {apps.map((app) => {
           const student = studentMap.get(app.studentId);
           const parsed = student?.resumeParsed as { fullTextSummary?: string } | null;
           return (
             <article className="card grid gap-3 p-5" key={app.id}>
-              <div className="flex flex-wrap items-start justify-between gap-3"><div><h2 className="text-xl font-bold">{student?.fullName}</h2><p className="text-sm text-[#66736c]">{student?.course}</p></div><span className="badge">{app.matchScore}% match</span></div>
+              <div className="flex flex-wrap items-start justify-between gap-3"><div><h2 className="text-xl font-black">{student?.fullName}</h2><p className="text-sm text-white/58">{student?.course}</p></div><span className="badge">{app.matchScore}% match</span></div>
               <p className="text-sm"><b>Skills:</b> {(student?.skills || []).join(", ")}</p>
               <p className="text-sm"><b>Resume:</b> {parsed?.fullTextSummary || "No summary available"}</p>
               <p className="text-sm"><b>Matched:</b> {(app.matchedSkills || []).join(", ") || "None"} · <b>Missing:</b> {(app.missingSkills || []).join(", ") || "None"}</p>

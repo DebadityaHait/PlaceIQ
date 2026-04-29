@@ -1,4 +1,5 @@
 import { eq, desc } from "drizzle-orm";
+import { ClipboardList } from "lucide-react";
 import { db } from "@/db";
 import { applications, jobs, profiles } from "@/db/schema";
 import { requireUser } from "@/lib/session";
@@ -15,7 +16,7 @@ export default async function StudentApplicationsPage() {
 
   return (
     <main className="container grid gap-6 py-8">
-      <h1 className="text-3xl font-bold">Applications</h1>
+      <h1 className="flex items-center gap-3 text-3xl font-black"><ClipboardList className="text-[#70f0c6]" />Applications</h1>
       <div className="card overflow-x-auto">
         <table>
           <thead><tr><th>Job</th><th>Date</th><th>Status</th><th>Match</th></tr></thead>

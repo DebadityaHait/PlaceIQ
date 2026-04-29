@@ -18,7 +18,7 @@ export function ActionForm({ action, children, className, submitLabel = "Save" }
     <form action={formAction} className={className}>
       {children}
       {state.message ? (
-        <p className={state.ok ? "text-sm text-green-700" : "text-sm text-red-700"}>{state.message}</p>
+        <p className={state.ok ? "text-sm font-semibold text-[#8dffd8]" : "text-sm font-semibold text-[#ffd166]"}>{state.message}</p>
       ) : null}
       <button className="btn" disabled={pending} type="submit">
         {pending ? "Working..." : submitLabel}

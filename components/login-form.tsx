@@ -34,7 +34,7 @@ export function LoginForm() {
     <form action={onSubmit} className="card grid gap-4 p-6">
       <label className="grid gap-2 text-sm font-semibold">Email<input className="field" name="email" type="email" required /></label>
       <label className="grid gap-2 text-sm font-semibold">Password<input className="field" name="password" type="password" required /></label>
-      {message ? <p className="text-sm text-red-700">{message}</p> : null}
+      {message ? <p className="text-sm font-semibold text-[#ffd166]">{message}</p> : null}
       <button className="btn" disabled={pending} type="submit">{pending ? "Signing in..." : "Sign in"}</button>
     </form>
   );
