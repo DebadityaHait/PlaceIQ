@@ -5,7 +5,7 @@ import { loadEnvConfig } from "@next/env";
 
 loadEnvConfig(process.cwd());
 
-const url = process.env.DIRECT_DATABASE_URL || process.env.DATABASE_URL;
+const url = (process.env.DIRECT_DATABASE_URL || process.env.DATABASE_URL)?.trim().replace(/^\uFEFF/, "");
 if (!url) throw new Error("DATABASE_URL or DIRECT_DATABASE_URL is required");
 
 async function main() {

@@ -7,3 +7,5 @@ geminiapikey.txt
 coverage
 dist
 *.tsbuildinfo
+
+.vercel

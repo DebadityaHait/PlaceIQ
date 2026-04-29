@@ -5,7 +5,7 @@ import * as schema from "./schema";
 
 loadEnvConfig(process.cwd());
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.DATABASE_URL?.trim().replace(/^\uFEFF/, "");
 
 if (!connectionString) {
   throw new Error("DATABASE_URL is required");
