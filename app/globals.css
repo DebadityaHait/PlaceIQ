@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #f7f7f4;
+  --foreground: #161616;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.card {
+  border: 1px solid #deded6;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border-radius: 6px;
+  padding: 0 14px;
+  border: 1px solid #1e3a34;
+  background: #1e3a34;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #1e3a34;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #cfcfc7;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fff;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #eef2e8;
+  color: #334035;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ecece6;
+  text-align: left;
+  vertical-align: top;
+}
