@@ -10,7 +10,10 @@ export default withAuth(
     if (path.startsWith("/officer") && role !== "officer") return NextResponse.redirect(new URL("/login", req.url));
     return NextResponse.next();
   },
-  { callbacks: { authorized: ({ token }) => !!token } }
+  {
+    secret: process.env.AUTH_SECRET,
+    callbacks: { authorized: ({ token }) => !!token }
+  }
 );
 
 export const config = {

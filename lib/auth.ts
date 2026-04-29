@@ -8,6 +8,7 @@ import { loginSchema } from "@/lib/validators/auth";
 import { redirectForRole } from "./utils";
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.AUTH_SECRET,
   session: { strategy: "jwt" },
   pages: { signIn: "/login" },
   providers: [
