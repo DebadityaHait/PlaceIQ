@@ -1,0 +1,7 @@
+.env
+.env.local
+.env.*.local
+geminiapikey.txt
+node_modules
+.next
+tsconfig.tsbuildinfo
